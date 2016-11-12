@@ -658,9 +658,6 @@ function T._TooManyErrors()
     -- if tainting accusation and Blizzard's UI errors represent more than 90% of errors then yield and don't display anything
     if not ((T._NDRTaintingAccusations + T._BlizzardUIErrors) > T._NonDecursiveErrors * 0.9) then
         if not WarningDisplayed and T.Dcr and T.Dcr.L and not (#DebugTextTable > 0 or T._TaintingAccusations > 10) then -- if we can and should display the alert
-            _Print(T.Dcr:ColorText((T.Dcr.L["TOO_MANY_ERRORS_ALERT"]):format(T._NonDecursiveErrors), "FFFF0000"));
-            _Print(T.Dcr:ColorText(T.Dcr.L["DONT_SHOOT_THE_MESSENGER"], "FFFF9955"));
-            _Print('|cFF47C2A1Last UI error:|r', LastErrorMessage);
             WarningDisplayed = true;
         end
     else
